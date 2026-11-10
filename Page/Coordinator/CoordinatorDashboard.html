@@ -1,6 +1,85 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Coordinator Dashboard | DonorConnect</title><link rel="stylesheet" href="../Design/Style.css"><script src="../JS/Common.js" defer></script><script src="../JS/Coordinator/CoordinatorDashboard.js" defer></script></head>
-<body><header class="header"><h1>DonorConnect</h1><p>Donation Coordinator</p></header><nav class="topnav" aria-label="Main navigation"><a href="CoordinatorLogin.html">Login</a><a href="CoordinatorDashboard.html">Dashboard</a><a href="CoordinatorSearch.html">Find Donors</a><a href="CoordinatorReview.html">Review Requests</a><a href="CoordinatorSchedule.html">Schedule</a></nav>
-<main><h2>Dashboard</h2><section class="stats" aria-label="Demo totals"><div class="stat">Total donors<strong id="totalDonors">0</strong></div><div class="stat">Available donors<strong id="availableDonors">0</strong></div><div class="stat">Pending requests<strong id="pendingRequests">0</strong></div><div class="stat">Emergency requests<strong id="emergencyRequests">0</strong></div></section>
-<section class="card"><h3>Recent requests</h3><div class="table-wrap"><table><thead><tr><th>Request</th><th>Blood</th><th>City</th><th>Urgency</th><th>Status</th></tr></thead><tbody id="recentRows"></tbody></table></div></section>
-<section class="card"><h3>My task list</h3><form id="taskForm" novalidate><div class="row"><div><label for="taskText">Task</label><input id="taskText" type="text" placeholder="Write a task"><p class="error" id="taskTextError"></p></div><div><label for="priority">Priority</label><select id="priority"><option value="">Choose priority</option><option>Low</option><option>Normal</option><option>High</option></select><p class="error" id="priorityError"></p></div></div><button type="submit">Add task</button><p id="taskMessage" class="message" aria-live="polite"></p></form><ul id="taskList"></ul></section></main><footer class="footer">Sample information only. Nothing is saved.</footer></body></html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Coordinator Dashboard | DonorConnect</title>
+        <link rel="stylesheet" href="../Design/Style.css">
+        <script src="../JS/Common.js" defer></script>
+        <script src="../JS/Coordinator/CoordinatorDashboard.js" defer></script>
+    </head>
+    <body>
+        <header class="header">
+            <h1>DonorConnect</h1>
+            <p>Donation Coordinator</p>
+        </header>
+        <nav class="topnav" aria-label="Main navigation">
+            <a href="CoordinatorLogin.html">Login</a>
+            <a href="CoordinatorDashboard.html">Dashboard</a>
+            <a href="CoordinatorSearch.html">Find Donors</a>
+            <a href="CoordinatorReview.html">Review Requests</a>
+            <a href="CoordinatorSchedule.html">Schedule</a>
+        </nav>
+        <main>
+            <h2>Dashboard</h2>
+            <section class="stats" aria-label="Demo totals">
+                <div class="stat">Total donors<strong id="totalDonors">0</strong></div>
+                <div class="stat">Available donors<strong id="availableDonors">0</strong></div>
+                <div class="stat">Pending requests<strong id="pendingRequests">0</strong></div>
+                <div class="stat">Emergency requests<strong id="emergencyRequests">0</strong></div>
+            </section>
+            <section class="card">
+                <h3>Recent requests</h3>
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Request</th>
+                                <th>Blood</th>
+                                <th>City</th>
+                                <th>Urgency</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="recentRows"></tbody>
+                    </table>
+                </div>
+            </section>
+            <section class="card">
+                <h3>My task list</h3>
+                <form id="taskForm" novalidate>
+                    <div class="row">
+                        <div>
+                            <label for="taskText">Task</label>
+                            <input id="taskText" type="text" placeholder="Write a task">
+                            <p class="error" id="taskTextError"></p>
+                        </div>
+                        <div>
+                            <label for="priority">Priority</label>
+                            <select id="priority">
+                                <option value="">Choose priority</option>
+                                <option>Low</option>
+                                <option>Normal</option>
+                                <option>High</option>
+                            </select>
+                            <p class="error" id="priorityError"></p>
+
+                        </div>
+
+                    </div>
+
+                    <button type "submit">Add task</button>
+
+                    <p id "taskMessage" class "message" aria-live "polite"></p>
+
+                </form>
+
+                <ul id "taskList"></ul>
+
+            </section>
+
+        </main>
+
+    </body>
+
+</html>

@@ -1,5 +1,64 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Schedule Donation | DonorConnect</title><link rel="stylesheet" href="../Design/Style.css"><script src="../JS/Common.js" defer></script><script src="../JS/Coordinator/CoordinatorSchedule.js" defer></script></head>
-<body><header class="header"><h1>DonorConnect</h1><p>Donation Coordinator</p></header><nav class="topnav" aria-label="Main navigation"><a href="CoordinatorLogin.html">Login</a><a href="CoordinatorDashboard.html">Dashboard</a><a href="CoordinatorSearch.html">Find Donors</a><a href="CoordinatorReview.html">Review Requests</a><a href="CoordinatorSchedule.html">Schedule</a></nav>
-<main><h2>Schedule Donation</h2><section class="card"><form id="scheduleForm" novalidate><div class="row"><div><label for="donor">Donor</label><select id="donor"><option value="">Choose donor</option></select><p class="error" id="donorError"></p></div><div><label for="request">Request</label><select id="request"><option value="">Choose request</option></select><p class="error" id="requestError"></p></div><div><label for="centre">Centre</label><select id="centre"><option value="">Choose centre</option></select><p class="error" id="centreError"></p></div><div><label for="date">Date</label><input id="date" type="date"><p class="error" id="dateError"></p></div><div><label for="time">Time slot</label><select id="time"><option value="">Choose time</option><option>09:00</option><option>11:00</option><option>13:00</option><option>15:00</option></select><p class="error" id="timeError"></p></div></div><label for="notes">Notes (optional)</label><textarea id="notes" maxlength="200" placeholder="Short note"></textarea><p id="matchInfo" class="message" aria-live="polite">Choose a donor and request to see their blood groups.</p><button type="submit">Add appointment</button><p id="scheduleMessage" class="message" aria-live="polite"></p></form></section>
-<section class="card"><h3>Appointments on this page</h3><div class="table-wrap"><table><thead><tr><th>Donor</th><th>Request</th><th>Centre</th><th>Date</th><th>Time</th><th>Status</th><th></th></tr></thead><tbody id="appointmentRows"></tbody></table></div></section></main><footer class="footer">This demo does not book a real appointment.</footer></body></html>
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Schedule Donation | DonorConnect</title>
+    <link rel="stylesheet" href="../Design/Style.css">
+    <script src="../JS/Common.js" defer></script>
+    <script src="../JS/Coordinator/CoordinatorSchedule.js" defer></script>
+</head>
+<body>
+    <header class="header">
+        <h1>DonorConnect</h1>
+        <p>Donation Coordinator</p>
+    </header>
+    <nav class="topnav" aria-label="Main navigation">
+        <a href="CoordinatorLogin.html">Login</a>
+        <a href="CoordinatorDashboard.html">Dashboard</a>
+        <a href="CoordinatorSearch.html">Find Donors</a>
+        <a href="CoordinatorReview.html">Review Requests</a>
+        <a href="CoordinatorSchedule.html">Schedule</a>
+    </nav>
+    <main>
+        <h2>Schedule Donation</h2>
+        <section class="card">
+            <form id="scheduleForm" novalidate>
+                <div class="row">
+                    <div>
+                        <label for="donor">Donor</label>
+                        <select id="donor">
+                            <option value="">Choose donor</option>
+                        </select>
+                        <p class="error" id="donorError"></p>
+                    </div>
+                    <div>
+                        <label for="request">Request</label>
+                        <select id="request">
+                            <option value="">Choose request</option>
+                        </select>
+                        <p class="error" id="requestError"></p>
+                    </div>
+                    <div>
+                        <label for="centre">Centre</label>
+                        <select id="centre">
+                            <option value="">Choose centre</option>
+                        </select>
+                        <p class="error" id="centreError"></p>
+                    </div>
+                    <div>
+                        <label for="date">Date</label>
+                        <input id="date" type="date">
+                        <p class="error" id="dateError"></p>
+                    </div>
+                    <div>
+                        <label for="time">Time slot</label>
+                        <select id("time"):
+                            .value = "";
+                            .innerHTML = "<option value="">Choose time</option><option>09:00</option><option>11:00</option><option>13:00</option><option>15:00</option>";
+                            break;
+                    }
+                }
+            }
+        });
+    });
+});
