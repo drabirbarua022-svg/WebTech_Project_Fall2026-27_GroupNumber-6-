@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Coordinator Login | DonorConnect</title>
+  <link rel="stylesheet" href="../Design/Style.css">
+  <script src="../JS/Common.js" defer></script><script src="../JS/Coordinator/CoordinatorLogin.js" defer></script>
+</head>
+<body>
+  <header class="header"><h1>DonorConnect</h1><p>Blood donation coordination demo</p></header>
+  <nav class="topnav" aria-label="Main navigation"><a href="CoordinatorLogin.html">Login</a><a href="CoordinatorDashboard.html">Dashboard</a><a href="CoordinatorSearch.html">Find Donors</a><a href="CoordinatorReview.html">Review Requests</a><a href="CoordinatorSchedule.html">Schedule</a></nav>
+  <main><section class="card">
+    <h2>Coordinator Login</h2><p>This is a demo page. It does not sign you in or save data.</p>
+    <form id="loginForm" novalidate>
+      <label for="staffId">Staff ID</label>
+      <input id="staffId" type="text" placeholder="CO-2001"><p class="error" id="staffIdError"></p>
+      <label for="password">Password</label>
+      <input id="password" type="password" placeholder="At least 8 characters"><p class="error" id="passwordError"></p>
+      <label for="centre">Centre</label>
+      <select id="centre"><option value="">Choose a centre</option><option>Dhaka</option><option>Chattogram</option><option>Sylhet</option><option>Rajshahi</option></select><p class="error" id="centreError"></p>
+      <label id="mathQuestion" for="mathAnswer">Answer the question</label>
+      <input id="mathAnswer" type="number"><p class="error" id="mathAnswerError"></p>
+      <button type="button" class="btn secondary" id="newQuestion">New question</button> <button type="submit">Check details</button>
+      <p id="loginMessage" class="message" aria-live="polite"></p><a id="continueLink" class="btn hidden" href="CoordinatorDashboard.html">Continue to Dashboard</a>
+    </form>
+  </section></main>
+</body>
+</html>
