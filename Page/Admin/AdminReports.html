@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Reports | DonorConnect</title><link rel="stylesheet" href="../Design/Style.css"><link rel="stylesheet" href="../Design/Admin.css"></head>
+<body class="admin-reports"><header class="site-header"><div class="brand">🩸 DonorConnect</div><span>Administrator Portal</span></header>
+<nav class="topnav"><a href="AdminDashboard.html">Dashboard</a><a href="AdminUsers.html">Users</a><a href="AdminCoordinators.html">Coordinators</a><a href="AdminReports.html">Reports</a><a href="AdminLogin.html">Logout</a></nav><main class="container">
+<h2>Reports</h2><p class="muted">Generate simple reports from the fictional sample data.</p>
+<section class="card"><h3>Generate a Report</h3>
+<form id="reportForm" novalidate>
+<label for="reportType">Report type</label><select id="reportType"><option value="">Choose report</option><option value="blood">Requests by blood group</option><option value="status">Requests by status</option><option value="city">Donors by city</option><option value="feedback">Feedback summary</option></select><p class="error" id="reportTypeError"></p>
+<div class="two-col"><div><label for="fromDate">From</label><input type="date" id="fromDate"><p class="error" id="fromDateError"></p></div><div><label for="toDate">To</label><input type="date" id="toDate"><p class="error" id="toDateError"></p></div></div>
+<button class="btn" type="submit">Generate report</button><button class="btn secondary" type="button" id="printReport">Print report</button>
+</form></section>
+<section class="card"><h3 id="reportTitle">Report Results</h3><div id="reportOutput"><p class="muted">Choose a report type and date range to generate a report.</p></div></section>
+</main><footer class="site-footer">DonorConnect · Frontend demonstration only · Medical staff decide donor eligibility.</footer>
+<script src="../JS/Common.js"></script><script src="../JS/Admin/AdminReports.js"></script></body></html>
