@@ -1,7 +1,4 @@
 
-
-
-
 :root {
     --primary-red: #B4233B;
     --dark-red: #82172C;
@@ -15,8 +12,6 @@
     --warning: #9A6400;
 }
 
-
-
 body {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;
@@ -28,7 +23,6 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
-
 
 
 h1 {
@@ -53,7 +47,6 @@ p, label {
 }
 
 
-
 button,
 .btn,
 .primary-btn {
@@ -72,8 +65,6 @@ button:hover,
     background-color: var(--dark-red);
 }
 
-
-
 .card,
 .admin-card,
 .stat-card,
@@ -85,8 +76,6 @@ button:hover,
     padding: 24px;
     box-shadow: 0 4px 15px rgba(36, 36, 43, 0.08);
 }
-
-
 
 input,
 select,
@@ -106,8 +95,6 @@ textarea:focus {
     border-color: var(--primary-red);
 }
 
-
-
 th {
     background-color: var(--light-pink);
     color: var(--dark-red);
@@ -117,7 +104,6 @@ td, th {
     border-color: var(--border);
 }
 
-/* Status messages */
 
 .success {
     color: var(--success);
@@ -131,7 +117,6 @@ td, th {
     color: var(--primary-red);
 }
 
-/* Secondary text */
 
 .secondary-text {
     color: var(--secondary-text);
