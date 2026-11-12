@@ -141,3 +141,15 @@ td, th {
     font-size: 24px;
     color: var(--dark-red);
 }
+
+.admin-login h2 {
+    font-size: 32px;
+    color: var(--dark-red);
+}
+
+.admin-login .card {
+    background-color: var(--white);
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 4px 15px rgba(36, 36, 43, 0.08);
+}
