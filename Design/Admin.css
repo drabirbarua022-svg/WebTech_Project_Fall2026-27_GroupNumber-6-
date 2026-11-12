@@ -121,3 +121,13 @@ td, th {
     font-size: 32px;
     color: var(--dark-red);
 }
+
+.admin-dashboard h2 {
+    font-size: 32px;
+    color: var(--dark-red);
+}
+
+.admin-dashboard h3 {
+    font-size: 24px;
+    color: var(--dark-red);
+}
