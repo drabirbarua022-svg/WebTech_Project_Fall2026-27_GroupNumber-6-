@@ -34,10 +34,9 @@ h2 {
 }
 
 h3 {
+    font-size: 24px;
     color: var(--dark-red);
 }
-
-/* Paragraphs and labels */
 
 p, label {
     font-size: 16px;
@@ -117,33 +116,20 @@ td, th {
     color: var(--secondary-text);
 }
 
-.admin-coordinators h2 {
+.admin-dashboard h2,
+.admin-users h2,
+.admin-coordinators h2,
+.admin-login h2,
+.admin-reports h2 {
     font-size: 32px;
     color: var(--dark-red);
 }
 
-.admin-dashboard h2 {
-    font-size: 32px;
-    color: var(--dark-red);
-}
-
-.admin-dashboard h3 {
+.admin-dashboard h3,
+.admin-users h3,
+.admin-coordinators h3,
+.admin-reports h3 {
     font-size: 24px;
-    color: var(--dark-red);
-}
-
-.admin-users h2 {
-    font-size: 32px;
-    color: var(--dark-red);
-}
-
-.admin-users h3 {
-    font-size: 24px;
-    color: var(--dark-red);
-}
-
-.admin-login h2 {
-    font-size: 32px;
     color: var(--dark-red);
 }
 
@@ -152,14 +138,4 @@ td, th {
     border-radius: 16px;
     padding: 24px;
     box-shadow: 0 4px 15px rgba(36, 36, 43, 0.08);
-}
-
-.admin-reports h2 {
-    font-size: 32px;
-    color: var(--dark-red);
-}
-
-.admin-reports h3 {
-    font-size: 24px;
-    color: var(--dark-red);
 }
