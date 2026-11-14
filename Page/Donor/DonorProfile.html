@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Your DonorConnect donor profile.">
+    <title>My Profile | DonorConnect</title>
+    <link rel="stylesheet" href="../../Design/Style.css">
+</head>
+<body class="donor-page">
+
+    <header class="dash-header">
+        <h1 class="dash-brand">DonorConnect</h1>
+        <nav class="dash-nav">
+            <a href="../../index.html">Home</a>
+            <a class="active" href="DonorProfile.html">My Profile</a>
+            <a href="DonorAvailability.html">Availability</a>
+            <a href="DonorAppointments.html">Appointments</a>
+        </nav>
+    </header>
+
+    <main class="dash-page">
+
+        <section class="dash-welcome">
+            <h2 class="dash-title">Welcome back, <span id="WelcomeName"></span>!</h2>
+            <p class="dash-text">Here's an overview of your blood donation journey.</p>
+            <p class="helper">Demo mode: changes are not saved.</p>
+        </section>
+
+        <section class="dash-row">
+            <div class="card stat-card">
+                <p class="stat-label">Blood Group</p>
+                <p class="stat-value" id="StatBloodGroup"></p>
+            </div>
+            <div class="card stat-card">
+                <p class="stat-label">Total Donations</p>
+                <p class="stat-value" id="StatDonations"></p>
+            </div>
+            <div class="card stat-card">
+                <p class="stat-label">Availability Preference</p>
+                <p class="stat-value"><span class="badge" id="StatAvailability"></span></p>
+            </div>
+        </section>
+
+        <section class="card">
+            <div class="profile-top">
+                <div class="initial-badge" id="ProfileInitial"></div>
+                <h3 class="card-heading">My Donor Profile</h3>
+            </div>
+
+            <table class="summary-table">
+                <tr><th>Full Name</th><td id="ProfileName"></td></tr>
+                <tr><th>Donor ID</th><td id="ProfileID"></td></tr>
+                <tr><th>Blood Group</th><td id="ProfileBloodGroup"></td></tr>
+                <tr><th>City</th><td id="ProfileCity"></td></tr>
+                <tr><th>Phone</th><td id="ProfilePhone"></td></tr>
+                <tr><th>Email</th><td id="ProfileEmail"></td></tr>
+                <tr><th>Total Donations</th><td id="ProfileDonations"></td></tr>
+            </table>
+
+            <p class="message message-success hidden" id="ProfileMessage">Profile updated. Demo mode: changes are not saved.</p>
+
+            <button class="btn btn-inline" type="button" id="EditButton" onclick="showEditForm()">Edit Profile</button>
+
+            <form class="edit-form hidden" id="EditForm" onsubmit="return validateEdit()" novalidate>
+                <fieldset>
+                    <legend>Edit Profile</legend>
+
+                    <div class="form-two">
+                        <div class="form-group">
+                            <label for="EditEmail">Email</label>
+                            <input class="form-input" type="email" id="EditEmail" name="EditEmail">
+                            <p class="error" id="EditEmailError"></p>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="EditPhone">Phone</label>
+                            <input class="form-input" type="text" id="EditPhone" name="EditPhone">
+                            <p class="error" id="EditPhoneError"></p>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="EditCity">City</label>
+                        <select class="form-input" id="EditCity" name="EditCity">
+                            <option value="">Select city</option>
+                            <option value="Dhaka">Dhaka</option>
+                            <option value="Chattogram">Chattogram</option>
+                            <option value="Sylhet">Sylhet</option>
+                            <option value="Rajshahi">Rajshahi</option>
+                            <option value="Khulna">Khulna</option>
+                            <option value="Barishal">Barishal</option>
+                            <option value="Rangpur">Rangpur</option>
+                            <option value="Mymensingh">Mymensingh</option>
+                        </select>
+                        <p class="error" id="EditCityError"></p>
+                    </div>
+
+                    <p class="error" id="EditChangeError"></p>
+
+                    <div class="form-actions">
+                        <input class="btn btn-inline" type="submit" value="Save Changes">
+                        <button class="btn btn-inline btn-secondary" type="button" onclick="hideEditForm()">Cancel</button>
+                    </div>
+                </fieldset>
+            </form>
+        </section>
+
+        <section class="card">
+            <h3 class="card-heading">Donation History</h3>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Donation Date</th>
+                        <th>Donation Centre</th>
+                        <th>Donation Type</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody id="HistoryBody"></tbody>
+            </table>
+        </section>
+
+        <h2 class="section-heading">Manage Your Donations</h2>
+
+        <section class="dash-row">
+            <div class="card action-card">
+                <h3 class="card-heading">Manage Availability</h3>
+                <p class="dash-text">Update your preferred donation days and availability status.</p>
+                <a class="btn" href="DonorAvailability.html">Manage Availability</a>
+            </div>
+            <div class="card action-card">
+                <h3 class="card-heading">Donation Appointments</h3>
+                <p class="dash-text">Review and respond to donation invitations.</p>
+                <a class="btn" href="DonorAppointments.html">View Appointments</a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="dash-footer">
+        <p>DonorConnect. Connecting Donors. Supporting Lives.</p>
+    </footer>
+
+    <script src="../../JS/Common.js"></script>
+    <script src="../../JS/Donor/DonorProfile.js"></script>
+</body>
+</html>

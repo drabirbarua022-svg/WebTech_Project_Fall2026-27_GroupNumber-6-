@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="DonorConnect helps blood donors, requesters and coordinators stay connected.">
+    <title>DonorConnect | Connecting Donors. Supporting Lives.</title>
+    <link rel="stylesheet" href="Design/Style.css">
+</head>
+<body class="home-body">
+
+    <main class="home-page">
+
+        <section class="home-role-card">
+            <h1 class="home-title">DonorConnect</h1>
+            <p class="home-tagline">Connecting Donors. Supporting Lives.</p>
+
+            <h2 class="home-role-heading">Choose Your Role</h2>
+            <p class="home-role-text">Select how you'd like to access DonorConnect.</p>
+
+            <nav class="home-role-list">
+                <a class="home-role-btn" href="Page/Donor/DonorLogin.html">Blood Donor</a>
+                <button class="home-role-btn" type="button" onclick="showUnavailable('Blood Requester')">Blood Requester</button>
+                <button class="home-role-btn" type="button" onclick="showUnavailable('Donation Coordinator')">Donation Coordinator</button>
+                <button class="home-role-btn" type="button" onclick="showUnavailable('Administrator')">Administrator</button>
+            </nav>
+
+            <p class="home-role-message" id="RoleMessage"></p>
+        </section>
+
+    </main>
+
+    <script src="JS/Index.js"></script>
+</body>
+</html>

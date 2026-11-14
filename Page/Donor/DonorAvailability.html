@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Manage your donation availability on DonorConnect.">
+    <title>Availability | DonorConnect</title>
+    <link rel="stylesheet" href="../../Design/Style.css">
+</head>
+<body class="donor-page">
+
+    <header class="dash-header">
+        <h1 class="dash-brand">DonorConnect</h1>
+        <nav class="dash-nav">
+            <a href="../../index.html">Home</a>
+            <a href="DonorProfile.html">My Profile</a>
+            <a class="active" href="DonorAvailability.html">Availability</a>
+            <a href="DonorAppointments.html">Appointments</a>
+        </nav>
+    </header>
+
+    <main class="dash-page">
+
+        <section class="dash-welcome">
+            <h2 class="dash-title">Manage Your Availability</h2>
+            <p class="dash-text">Let donation coordinators know when you may be available to donate.</p>
+            <p class="helper">Demo mode: changes are not saved.</p>
+        </section>
+
+        <section class="card">
+            <h3 class="card-heading">Current Availability Status</h3>
+            <span class="badge badge-large" id="StatusBadge"></span>
+            <p class="helper">This is your own stated availability. Medical staff decide donation eligibility.</p>
+        </section>
+
+        <section class="card">
+            <form id="AvailabilityForm" onsubmit="return validateAvailability()" novalidate>
+                <fieldset>
+                    <legend>Update Availability</legend>
+
+                    <div class="form-group">
+                        <p class="form-label">Status</p>
+                        <div class="form-options">
+                            <input type="radio" id="StatusAvailable" name="Status" value="Available" onchange="showSection()">
+                            <label for="StatusAvailable">Available</label>
+                            <input type="radio" id="StatusNotAvailable" name="Status" value="Not Available" onchange="showSection()">
+                            <label for="StatusNotAvailable">Not Available</label>
+                        </div>
+                        <p class="error" id="StatusError"></p>
+                    </div>
+
+                    <div class="hidden" id="AvailableSection">
+                        <div class="form-group">
+                            <p class="form-label">Preferred Donation Days</p>
+                            <div class="form-options">
+                                <input type="checkbox" id="DaySaturday" name="Days" value="Saturday">
+                                <label for="DaySaturday">Saturday</label>
+                                <input type="checkbox" id="DaySunday" name="Days" value="Sunday">
+                                <label for="DaySunday">Sunday</label>
+                                <input type="checkbox" id="DayMonday" name="Days" value="Monday">
+                                <label for="DayMonday">Monday</label>
+                                <input type="checkbox" id="DayTuesday" name="Days" value="Tuesday">
+                                <label for="DayTuesday">Tuesday</label>
+                                <input type="checkbox" id="DayWednesday" name="Days" value="Wednesday">
+                                <label for="DayWednesday">Wednesday</label>
+                                <input type="checkbox" id="DayThursday" name="Days" value="Thursday">
+                                <label for="DayThursday">Thursday</label>
+                                <input type="checkbox" id="DayFriday" name="Days" value="Friday">
+                                <label for="DayFriday">Friday</label>
+                            </div>
+                            <p class="error" id="DaysError"></p>
+                        </div>
+
+                        <div class="form-two">
+                            <div class="form-group">
+                                <label for="TimeSlot">Preferred Time Slot</label>
+                                <select class="form-input" id="TimeSlot" name="TimeSlot">
+                                    <option value="">Select time slot</option>
+                                    <option value="Morning">Morning</option>
+                                    <option value="Afternoon">Afternoon</option>
+                                    <option value="Evening">Evening</option>
+                                </select>
+                                <p class="error" id="TimeSlotError"></p>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="Centre">Preferred Donation Centre</label>
+                                <select class="form-input" id="Centre" name="Centre">
+                                    <option value="">Select donation centre</option>
+                                    <option value="Dhaka Central Blood Centre">Dhaka Central Blood Centre</option>
+                                    <option value="Mirpur Community Blood Centre">Mirpur Community Blood Centre</option>
+                                    <option value="Uttara Donation Centre">Uttara Donation Centre</option>
+                                </select>
+                                <p class="error" id="CentreError"></p>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="AvailableFrom">Available From</label>
+                            <input class="form-input" type="date" id="AvailableFrom" name="AvailableFrom">
+                            <p class="helper">Choose a date from today up to 60 days ahead.</p>
+                            <p class="error" id="AvailableFromError"></p>
+                        </div>
+                    </div>
+
+                    <div class="hidden" id="UnavailableSection">
+                        <div class="form-two">
+                            <div class="form-group">
+                                <label for="Reason">Reason for Unavailability</label>
+                                <select class="form-input" id="Reason" name="Reason">
+                                    <option value="">Select a reason</option>
+                                    <option value="Personal Schedule">Personal Schedule</option>
+                                    <option value="Travel">Travel</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                                <p class="error" id="ReasonError"></p>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="UnavailableUntil">Unavailable Until</label>
+                                <input class="form-input" type="date" id="UnavailableUntil" name="UnavailableUntil">
+                                <p class="error" id="UnavailableUntilError"></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p class="error" id="DuplicateError"></p>
+                    <p class="message message-success hidden" id="AvailabilityMessage">Availability updated for this demonstration session.</p>
+
+                    <input class="btn btn-inline" type="submit" value="Save Availability">
+                </fieldset>
+            </form>
+        </section>
+
+        <section class="card">
+            <h3 class="card-heading">Availability Entries</h3>
+            <p class="entry-count">Total Entries: <span id="EntryCount">0</span></p>
+
+            <ul class="entry-list" id="EntryList"></ul>
+            <p class="dash-text" id="EmptyEntries">No availability entries have been added yet.</p>
+
+            <button class="btn btn-inline btn-secondary" type="button" id="RemoveButton" onclick="removeLastEntry()">Remove Last Entry</button>
+        </section>
+
+    </main>
+
+    <footer class="dash-footer">
+        <p>DonorConnect. Connecting Donors. Supporting Lives.</p>
+    </footer>
+
+    <script src="../../JS/Common.js"></script>
+    <script src="../../JS/Donor/DonorAvailability.js"></script>
+</body>
+</html>

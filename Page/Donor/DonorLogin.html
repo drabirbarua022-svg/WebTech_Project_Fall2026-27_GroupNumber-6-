@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Log in to your DonorConnect donor account.">
+    <title>Donor Login | DonorConnect</title>
+    <link rel="stylesheet" href="../../Design/Style.css">
+</head>
+<body class="donor-page">
+
+    <main class="login-page">
+
+        <section class="login-intro">
+            <h1 class="login-brand">DonorConnect</h1>
+            <p class="login-tagline">Connecting Donors. Supporting Lives.</p>
+            <a class="login-home-link" href="../../index.html">Back to Home</a>
+        </section>
+
+        <section class="card">
+
+            <nav class="card-tabs">
+                <a class="active" href="DonorLogin.html">Login</a>
+                <a href="DonorRegister.html">Register</a>
+            </nav>
+
+            <form id="LoginForm" onsubmit="return validateLogin()" novalidate>
+                <fieldset>
+                    <legend>Donor Login</legend>
+                    <p class="card-intro">Welcome back to DonorConnect</p>
+
+                    <div class="form-group">
+                        <label for="DonorID">Donor ID</label>
+                        <input class="form-input" type="text" id="DonorID" name="DonorID" placeholder="Enter your Donor ID (e.g. DN-1001)">
+                        <p class="error" id="DonorIDError"></p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="Password">Password</label>
+                        <input class="form-input" type="password" id="Password" name="Password" placeholder="Enter your password">
+                        <p class="error" id="PasswordError"></p>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-check">
+                            <input type="checkbox" id="ShowPassword" onchange="togglePassword()">
+                            <label for="ShowPassword">Show Password</label>
+                        </div>
+                        <a href="#" id="ForgotLink" onclick="return toggleForgot()">Forgot Password?</a>
+                    </div>
+
+                    <p class="message hidden" id="ForgotNote">Password recovery is not available in this demonstration.</p>
+
+                    <input class="btn" type="submit" id="LoginButton" value="Login">
+
+                    <div class="hidden" id="LoginSuccess">
+                        <p class="message message-success">Check passed (demo login).</p>
+                        <a class="btn" href="DonorProfile.html">Continue to Profile</a>
+                    </div>
+                </fieldset>
+            </form>
+
+            <p class="form-note">New to DonorConnect? <a href="DonorRegister.html">Register here</a></p>
+            <p class="form-note">Demo account: DN-1001 / donor1234</p>
+        </section>
+
+    </main>
+
+    <script src="../../JS/Common.js"></script>
+    <script src="../../JS/Donor/DonorLogin.js"></script>
+</body>
+</html>

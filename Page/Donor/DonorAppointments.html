@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Review your donation invitations on DonorConnect.">
+    <title>Appointments | DonorConnect</title>
+    <link rel="stylesheet" href="../../Design/Style.css">
+</head>
+<body class="donor-page">
+
+    <header class="dash-header">
+        <h1 class="dash-brand">DonorConnect</h1>
+        <nav class="dash-nav">
+            <a href="../../index.html">Home</a>
+            <a href="DonorProfile.html">My Profile</a>
+            <a href="DonorAvailability.html">Availability</a>
+            <a class="active" href="DonorAppointments.html">Appointments</a>
+        </nav>
+    </header>
+
+    <main class="dash-page">
+
+        <section class="dash-welcome">
+            <h2 class="dash-title">Donation Appointments</h2>
+            <p class="dash-text">Review and respond to your donation invitations.</p>
+            <p class="helper">Demo mode: these are sample invitations, and changes are not saved.</p>
+        </section>
+
+        <section class="dash-row">
+            <div class="card stat-card">
+                <p class="stat-label">Pending Invitations</p>
+                <p class="stat-value" id="CountPending"></p>
+            </div>
+            <div class="card stat-card">
+                <p class="stat-label">Accepted Invitations</p>
+                <p class="stat-value" id="CountAccepted"></p>
+            </div>
+            <div class="card stat-card">
+                <p class="stat-label">Declined Invitations</p>
+                <p class="stat-value" id="CountDeclined"></p>
+            </div>
+        </section>
+
+        <div class="form-group filter-group">
+            <label for="StatusFilter">Filter Appointments</label>
+            <select class="form-input" id="StatusFilter" name="StatusFilter" onchange="changeFilter()">
+                <option value="All">All Appointments</option>
+                <option value="Pending">Pending</option>
+                <option value="Accepted">Accepted</option>
+                <option value="Declined">Declined</option>
+            </select>
+        </div>
+
+        <p class="message message-success hidden" id="AppointmentMessage"></p>
+
+        <section id="AppointmentList"></section>
+
+        <p class="card hidden" id="EmptyAppointments">No appointments match this filter.</p>
+
+    </main>
+
+    <footer class="dash-footer">
+        <p>DonorConnect. Connecting Donors. Supporting Lives.</p>
+    </footer>
+
+    <script src="../../JS/Common.js"></script>
+    <script src="../../JS/Donor/DonorAppointments.js"></script>
+</body>
+</html>

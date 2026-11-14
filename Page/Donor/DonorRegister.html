@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Register as a blood donor with DonorConnect.">
+    <title>Donor Registration | DonorConnect</title>
+    <link rel="stylesheet" href="../../Design/Style.css">
+</head>
+<body class="donor-page">
+
+    <header class="site-header">
+        <h1 class="site-brand">DonorConnect</h1>
+        <a class="site-header-link" href="../../index.html">Back to Home</a>
+    </header>
+
+    <main class="register-page">
+
+        <section class="card" id="RegisterCard">
+
+            <nav class="card-tabs">
+                <a href="DonorLogin.html">Login</a>
+                <a class="active" href="DonorRegister.html">Register</a>
+            </nav>
+
+            <div class="drop-circle">
+                <div class="drop"></div>
+            </div>
+            <h2 class="page-title">Become a Blood Donor</h2>
+            <p class="card-intro">Register with DonorConnect and help support people in need of blood donation.</p>
+
+            <form id="RegisterForm" onsubmit="return validateRegister()" novalidate>
+
+                <fieldset>
+                    <legend>Personal Information</legend>
+
+                    <div class="form-group">
+                        <label for="FullName">Full Name</label>
+                        <input class="form-input" type="text" id="FullName" name="FullName" placeholder="Enter your full name">
+                        <p class="error" id="FullNameError"></p>
+                    </div>
+
+                    <div class="form-two">
+                        <div class="form-group">
+                            <label for="DOB">Date of Birth</label>
+                            <input class="form-input" type="date" id="DOB" name="DOB" onchange="showAge()">
+                            <p class="helper" id="AgeDisplay"></p>
+                            <p class="error" id="DOBError"></p>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="BloodGroup">Blood Group</label>
+                            <select class="form-input" id="BloodGroup" name="BloodGroup">
+                                <option value="">Select blood group</option>
+                                <option value="A+">A+</option>
+                                <option value="A-">A-</option>
+                                <option value="B+">B+</option>
+                                <option value="B-">B-</option>
+                                <option value="AB+">AB+</option>
+                                <option value="AB-">AB-</option>
+                                <option value="O+">O+</option>
+                                <option value="O-">O-</option>
+                            </select>
+                            <p class="error" id="BloodGroupError"></p>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <p class="form-label">Gender</p>
+                        <div class="form-options">
+                            <input type="radio" id="GenderMale" name="Gender" value="Male">
+                            <label for="GenderMale">Male</label>
+                            <input type="radio" id="GenderFemale" name="Gender" value="Female">
+                            <label for="GenderFemale">Female</label>
+                            <input type="radio" id="GenderOther" name="Gender" value="Other">
+                            <label for="GenderOther">Other</label>
+                        </div>
+                        <p class="error" id="GenderError"></p>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Contact Information</legend>
+
+                    <div class="form-two">
+                        <div class="form-group">
+                            <label for="Email">Email</label>
+                            <input class="form-input" type="email" id="Email" name="Email" placeholder="name@example.com">
+                            <p class="error" id="EmailError"></p>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="Phone">Phone Number</label>
+                            <input class="form-input" type="text" id="Phone" name="Phone" placeholder="01XXXXXXXXX">
+                            <p class="error" id="PhoneError"></p>
+                        </div>
+                    </div>
+
+                    <div class="form-two">
+                        <div class="form-group">
+                            <label for="City">City</label>
+                            <select class="form-input" id="City" name="City">
+                                <option value="">Select city</option>
+                                <option value="Dhaka">Dhaka</option>
+                                <option value="Chattogram">Chattogram</option>
+                                <option value="Sylhet">Sylhet</option>
+                                <option value="Rajshahi">Rajshahi</option>
+                                <option value="Khulna">Khulna</option>
+                                <option value="Barishal">Barishal</option>
+                                <option value="Rangpur">Rangpur</option>
+                                <option value="Mymensingh">Mymensingh</option>
+                            </select>
+                            <p class="error" id="CityError"></p>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="LastDonation">Last Donation Date (optional)</label>
+                            <input class="form-input" type="date" id="LastDonation" name="LastDonation">
+                            <p class="error" id="LastDonationError"></p>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="Address">Address</label>
+                        <textarea class="form-input" id="Address" name="Address" rows="3" placeholder="House, road, area"></textarea>
+                        <p class="error" id="AddressError"></p>
+                    </div>
+
+                    <div class="form-group">
+                        <p class="form-label">Preferred Contact Methods</p>
+                        <div class="form-options">
+                            <input type="checkbox" id="ContactEmail" name="ContactMethod" value="Email">
+                            <label for="ContactEmail">Email</label>
+                            <input type="checkbox" id="ContactPhone" name="ContactMethod" value="Phone Call">
+                            <label for="ContactPhone">Phone Call</label>
+                            <input type="checkbox" id="ContactSMS" name="ContactMethod" value="SMS">
+                            <label for="ContactSMS">SMS</label>
+                        </div>
+                        <p class="error" id="ContactMethodError"></p>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Account Information</legend>
+
+                    <div class="form-group">
+                        <label for="Username">Username</label>
+                        <input class="form-input" type="text" id="Username" name="Username" placeholder="Choose a username">
+                        <p class="error" id="UsernameError"></p>
+                    </div>
+
+                    <div class="form-two">
+                        <div class="form-group">
+                            <label for="Password">Password</label>
+                            <input class="form-input" type="password" id="Password" name="Password" placeholder="At least 8 characters" oninput="checkStrength()">
+                            <p class="helper" id="PasswordStrength"></p>
+                            <p class="error" id="PasswordError"></p>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="ConfirmPassword">Confirm Password</label>
+                            <input class="form-input" type="password" id="ConfirmPassword" name="ConfirmPassword" placeholder="Type the password again" oninput="checkConfirm()">
+                            <p class="error" id="ConfirmPasswordError"></p>
+                        </div>
+                    </div>
+
+                    <div class="form-check">
+                        <input type="checkbox" id="ShowPasswords" onchange="togglePasswords()">
+                        <label for="ShowPasswords">Show Passwords</label>
+                    </div>
+
+                    <div class="form-check">
+                        <input type="checkbox" id="Eligibility" name="Eligibility" value="Yes">
+                        <label for="Eligibility">I understand that medical staff determine my eligibility to donate blood.</label>
+                    </div>
+                    <p class="error" id="EligibilityError"></p>
+                </fieldset>
+
+                <input class="btn" type="submit" value="Register as Donor">
+
+            </form>
+
+            <p class="form-note">Already registered? <a href="DonorLogin.html">Login here</a></p>
+        </section>
+
+        <section class="card hidden" id="RegisterSummary">
+            <h2 class="page-title">Registration Summary</h2>
+            <p class="message message-success">Registration checks passed. This demonstration does not save your information yet.</p>
+
+            <table class="summary-table">
+                <tr><th>Full Name</th><td id="SummaryName"></td></tr>
+                <tr><th>Age</th><td id="SummaryAge"></td></tr>
+                <tr><th>Gender</th><td id="SummaryGender"></td></tr>
+                <tr><th>Blood Group</th><td id="SummaryBloodGroup"></td></tr>
+                <tr><th>City</th><td id="SummaryCity"></td></tr>
+                <tr><th>Email</th><td id="SummaryEmail"></td></tr>
+                <tr><th>Phone</th><td id="SummaryPhone"></td></tr>
+                <tr><th>Contact Methods</th><td id="SummaryContact"></td></tr>
+                <tr><th>Username</th><td id="SummaryUsername"></td></tr>
+            </table>
+
+            <p class="helper summary-note">No real account has been created. To explore the donor area, log in with the demo account: DN-1001 / donor1234.</p>
+
+            <a class="btn" href="DonorLogin.html">Continue to Login</a>
+        </section>
+
+    </main>
+
+    <script src="../../JS/Common.js"></script>
+    <script src="../../JS/Donor/DonorRegister.js"></script>
+</body>
+</html>

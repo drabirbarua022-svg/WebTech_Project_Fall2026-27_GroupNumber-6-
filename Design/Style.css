@@ -1,0 +1,886 @@
+/* =========================================
+   MEMBER 1: DONOR
+   Homepage (index.html)
+   ========================================= */
+
+/* Page basics */
+.home-body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #24242B;
+    background-color: #FEFEFE;
+}
+
+/* Full-window background image, card placed on the right */
+.home-page {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    min-height: 100vh;
+    padding: 24px 6%;
+    box-sizing: border-box;
+    background-color: #FEFEFE;
+    background-image: url("../Images/homepage-bg.png");
+    background-size: cover;
+    background-position: left center;
+    background-repeat: no-repeat;
+}
+
+/* White role-selection card */
+.home-role-card {
+    width: 100%;
+    max-width: 440px;
+    padding: 40px 36px;
+    box-sizing: border-box;
+    text-align: center;
+    background-color: #FFFFFF;
+    border: 1px solid #E8DDE0;
+    border-top: 6px solid #B4233B;
+    border-radius: 16px;
+    box-shadow: 0 10px 32px rgba(130, 23, 44, 0.18);
+}
+
+/* Text inside the card */
+.home-title {
+    margin: 0 0 8px 0;
+    font-size: 48px;
+    font-weight: bold;
+    color: #82172C;
+}
+
+.home-tagline {
+    margin: 0 0 28px 0;
+    font-size: 16px;
+    color: #B4233B;
+}
+
+.home-role-heading {
+    margin: 0 0 8px 0;
+    font-size: 20px;
+    font-weight: bold;
+    color: #82172C;
+}
+
+.home-role-text {
+    margin: 0 0 24px 0;
+    font-size: 14px;
+    color: #62636B;
+}
+
+/* The four role buttons */
+.home-role-btn {
+    display: block;
+    width: 100%;
+    margin: 0 0 14px 0;
+    padding: 16px 20px;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    color: #FFFFFF;
+    background-color: #B4233B;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(36, 36, 43, 0.15);
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+/* Mouse over a button */
+.home-role-btn:hover {
+    background-color: #82172C;
+    box-shadow: 0 6px 14px rgba(36, 36, 43, 0.25);
+    transform: translateY(-2px);
+}
+
+/* Keyboard focus on a button */
+.home-role-btn:focus {
+    outline: 3px solid #24242B;
+}
+
+/* Message shown under the buttons (filled by JavaScript) */
+.home-role-message {
+    margin: 8px 0 0 0;
+    font-size: 14px;
+    color: #82172C;
+}
+
+/* =========================================
+   MEMBER 1: DONOR
+   Donor pages: shared parts
+   ========================================= */
+
+/* Page basics and wave background */
+.donor-page {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    color: #24242B;
+    background-color: #F9F7F8;
+    background-image: url("../Images/pages-bg.png");
+    background-size: cover;
+    background-position: right bottom;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* White content card */
+.donor-page .card {
+    padding: 24px;
+    box-sizing: border-box;
+    background-color: #FFFFFF;
+    border: 1px solid #E8DDE0;
+    border-radius: 16px;
+    box-shadow: 0 10px 32px rgba(130, 23, 44, 0.18);
+}
+
+/* Links inside a card */
+.donor-page .card a {
+    color: #B4233B;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.donor-page .card a:hover {
+    text-decoration: underline;
+}
+
+/* Login and Register tabs at the top of a card */
+.donor-page .card-tabs {
+    margin: 0 0 24px 0;
+    border-bottom: 1px solid #E8DDE0;
+}
+
+.donor-page .card-tabs a {
+    display: inline-block;
+    padding: 10px 20px;
+    font-weight: normal;
+    color: #62636B;
+    border-bottom: 3px solid #FFFFFF;
+}
+
+.donor-page .card-tabs a:hover {
+    color: #B4233B;
+    text-decoration: none;
+}
+
+.donor-page .card-tabs a.active {
+    font-weight: bold;
+    color: #82172C;
+    border-bottom: 3px solid #B4233B;
+}
+
+/* Card title and the text under it */
+.donor-page .page-title {
+    margin: 0 0 8px 0;
+    text-align: center;
+    font-size: 32px;
+    font-weight: bold;
+    color: #82172C;
+}
+
+.donor-page .card-intro {
+    margin: 0 0 24px 0;
+    text-align: center;
+    color: #62636B;
+}
+
+/* Form parts */
+.donor-page fieldset {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+.donor-page legend {
+    width: 100%;
+    margin: 0 0 8px 0;
+    padding: 0;
+    text-align: center;
+    font-size: 32px;
+    font-weight: bold;
+    color: #82172C;
+}
+
+.donor-page .form-group {
+    margin: 0 0 16px 0;
+}
+
+.donor-page .form-group label {
+    display: block;
+    margin: 0 0 6px 0;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.donor-page .form-input {
+    width: 100%;
+    padding: 10px 12px;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    color: #24242B;
+    background-color: #FFFFFF;
+    border: 1px solid #E8DDE0;
+    border-radius: 8px;
+}
+
+.donor-page .form-input:focus {
+    outline: none;
+    border-color: #B4233B;
+    box-shadow: 0 0 0 3px #FFF0F2;
+}
+
+/* Hide the eye icon that Microsoft Edge adds to password inputs */
+.donor-page input::-ms-reveal {
+    display: none;
+}
+
+/* Two fields side by side */
+.donor-page .form-two {
+    display: flex;
+    justify-content: space-between;
+}
+
+.donor-page .form-two .form-group {
+    width: 48%;
+}
+
+/* Caption above a group of radio buttons or checkboxes */
+.donor-page .form-label {
+    margin: 0 0 6px 0;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+/* Radio buttons and checkboxes in one row */
+.donor-page .form-options label {
+    display: inline;
+    margin: 0 16px 0 4px;
+    font-weight: normal;
+}
+
+/* Checkbox with a sentence beside it */
+.donor-page .form-check label {
+    font-size: 15px;
+}
+
+/* Small grey helper text */
+.donor-page .helper {
+    margin: 4px 0 0 0;
+    font-size: 14px;
+    color: #62636B;
+}
+
+/* Error text under an input (filled by JavaScript) */
+.donor-page .error {
+    margin: 4px 0 0 0;
+    font-size: 14px;
+    color: #B4233B;
+}
+
+/* Small text under a form */
+.donor-page .form-note {
+    margin: 16px 0 0 0;
+    text-align: center;
+    font-size: 14px;
+    color: #62636B;
+}
+
+/* Main button */
+.donor-page .btn {
+    display: block;
+    width: 100%;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    color: #FFFFFF;
+    background-color: #B4233B;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.donor-page .btn:hover {
+    background-color: #82172C;
+    transform: translateY(-2px);
+}
+
+.donor-page .btn:focus {
+    outline: 3px solid #24242B;
+}
+
+/* A link that looks like the main button */
+.donor-page .card a.btn {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+/* A button that is only as wide as its text */
+.donor-page .btn-inline {
+    display: inline-block;
+    width: auto;
+}
+
+/* White button with a red outline, for secondary actions */
+.donor-page .btn-secondary {
+    color: #82172C;
+    background-color: #FFFFFF;
+    border: 1px solid #B4233B;
+}
+
+.donor-page .btn-secondary:hover {
+    background-color: #FFF0F2;
+}
+
+/* A button that cannot be used right now */
+.donor-page .btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Space between buttons that sit side by side */
+.donor-page .form-actions .btn {
+    margin: 0 8px 0 0;
+}
+
+/* Hidden until JavaScript shows it */
+.donor-page .hidden {
+    display: none;
+}
+
+/* Information box */
+.donor-page .message {
+    margin: 0 0 16px 0;
+    padding: 10px 12px;
+    font-size: 14px;
+    color: #82172C;
+    background-color: #FFF0F2;
+    border: 1px solid #E8DDE0;
+    border-radius: 8px;
+}
+
+/* Success version of the information box */
+.donor-page .message-success {
+    color: #237A4B;
+    background-color: #F9F7F8;
+    border-left: 4px solid #237A4B;
+}
+
+/* Table of labels and values */
+.donor-page .summary-table {
+    width: 100%;
+    margin: 0 0 24px 0;
+}
+
+.donor-page .summary-table th,
+.donor-page .summary-table td {
+    padding: 10px 8px;
+    text-align: left;
+    border-bottom: 1px solid #E8DDE0;
+}
+
+.donor-page .summary-table th {
+    width: 40%;
+    color: #62636B;
+}
+
+/* Small status label */
+.donor-page .badge {
+    display: inline-block;
+    padding: 4px 10px;
+    font-size: 13px;
+    font-weight: bold;
+    border-radius: 12px;
+    border: 1px solid #E8DDE0;
+}
+
+/* Green: Available, Accepted, Completed */
+.donor-page .badge-success {
+    color: #237A4B;
+    border-color: #237A4B;
+}
+
+/* Amber: Pending */
+.donor-page .badge-warning {
+    color: #9A6400;
+    border-color: #9A6400;
+}
+
+/* Red: Declined */
+.donor-page .badge-danger {
+    color: #B4233B;
+    border-color: #B4233B;
+}
+
+/* Grey: Not Available */
+.donor-page .badge-neutral {
+    color: #62636B;
+    border-color: #62636B;
+}
+
+/* Larger status badge */
+.donor-page .badge-large {
+    margin: 0 0 8px 0;
+    padding: 6px 16px;
+    font-size: 18px;
+}
+
+/* =========================================
+   MEMBER 1: DONOR
+   Donor Login (DonorLogin.html)
+   ========================================= */
+
+/* Red shapes on the left, login card on the white right side */
+.login-page {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 100vh;
+    padding: 40px 10% 40px 5%;
+    box-sizing: border-box;
+    background-color: #FFFFFF;
+    background-image: url("../Images/login-bg.png");
+    background-size: cover;
+    background-position: left center;
+    background-repeat: no-repeat;
+}
+
+/* Branding on the red area, at the bottom left */
+.login-intro {
+    align-self: flex-end;
+    max-width: 340px;
+}
+
+.login-brand {
+    margin: 0 0 8px 0;
+    font-size: 48px;
+    font-weight: bold;
+    color: #FFFFFF;
+}
+
+.login-tagline {
+    margin: 0 0 20px 0;
+    font-size: 18px;
+    color: #FFF0F2;
+}
+
+.login-home-link {
+    font-weight: 600;
+    color: #FFFFFF;
+}
+
+/* Login card size */
+.login-page .card {
+    width: 100%;
+    max-width: 400px;
+    padding: 32px;
+}
+
+/* Show Password on the left, Forgot Password on the right */
+.login-page .form-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0 20px 0;
+    font-size: 14px;
+}
+
+/* =========================================
+   MEMBER 1: DONOR
+   Donor Registration (DonorRegister.html)
+   ========================================= */
+
+/* Slim header with the site name */
+.donor-page .site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 5%;
+    background-color: #FFFFFF;
+    border-bottom: 1px solid #E8DDE0;
+}
+
+.donor-page .site-brand {
+    margin: 0;
+    font-size: 26px;
+    font-weight: bold;
+    color: #82172C;
+}
+
+.donor-page .site-header-link {
+    font-weight: 600;
+    text-decoration: none;
+    color: #B4233B;
+}
+
+.donor-page .site-header-link:hover {
+    text-decoration: underline;
+}
+
+/* Centered registration card */
+.register-page {
+    padding: 40px 16px;
+}
+
+.register-page .card {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 32px;
+}
+
+/* Blood drop symbol made with CSS */
+.donor-page .drop-circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 16px auto;
+    background-color: #FFF0F2;
+    border-radius: 50%;
+}
+
+.donor-page .drop {
+    width: 22px;
+    height: 22px;
+    background-color: #B4233B;
+    border-radius: 0 50% 50% 50%;
+    transform: rotate(45deg);
+}
+
+/* The three form sections */
+.register-page fieldset {
+    margin: 0 0 24px 0;
+}
+
+.register-page legend {
+    margin: 0 0 16px 0;
+    padding: 0 0 8px 0;
+    text-align: left;
+    font-size: 20px;
+    border-bottom: 1px solid #E8DDE0;
+}
+
+.register-page .form-check {
+    margin: 0 0 12px 0;
+}
+
+.register-page .btn {
+    margin: 8px 0 0 0;
+}
+
+.donor-page .summary-note {
+    margin: 0 0 20px 0;
+}
+
+/* =========================================
+   MEMBER 1: DONOR
+   Dashboard pages: shared parts
+   (Profile, Availability, Appointments)
+   ========================================= */
+
+/* Full-width red header with navigation */
+.donor-page .dash-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 5%;
+    background-color: #B4233B;
+}
+
+.donor-page .dash-brand {
+    margin: 0;
+    font-size: 26px;
+    font-weight: bold;
+    color: #FFFFFF;
+}
+
+.donor-page .dash-nav a {
+    display: inline-block;
+    padding: 8px 14px;
+    text-decoration: none;
+    color: #FFFFFF;
+    border-radius: 8px;
+    transition: 0.2s ease;
+}
+
+.donor-page .dash-nav a:hover {
+    background-color: #82172C;
+}
+
+.donor-page .dash-nav a.active {
+    font-weight: bold;
+    color: #82172C;
+    background-color: #FFFFFF;
+}
+
+/* Centered main area for laptop and desktop screens */
+.dash-page {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 32px 24px;
+}
+
+.dash-page .card {
+    margin: 0 0 24px 0;
+}
+
+/* Welcome section */
+.donor-page .dash-welcome {
+    margin: 0 0 24px 0;
+    text-align: center;
+}
+
+.donor-page .dash-title {
+    margin: 0 0 8px 0;
+    font-size: 32px;
+    font-weight: bold;
+    color: #82172C;
+}
+
+.donor-page .dash-text {
+    margin: 0;
+    font-size: 16px;
+    color: #62636B;
+}
+
+/* A row of cards side by side */
+.donor-page .dash-row {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 0 24px 0;
+}
+
+.dash-page .dash-row .card {
+    margin: 0;
+}
+
+/* Statistics cards */
+.donor-page .stat-card {
+    width: 31%;
+    text-align: center;
+}
+
+.donor-page .stat-label {
+    margin: 0 0 8px 0;
+    font-size: 14px;
+    color: #62636B;
+}
+
+.donor-page .stat-value {
+    margin: 0;
+    font-size: 32px;
+    font-weight: bold;
+    color: #B4233B;
+}
+
+.donor-page .stat-card .badge {
+    padding: 6px 16px;
+    font-size: 18px;
+}
+
+/* Heading inside a card */
+.donor-page .card-heading {
+    margin: 0 0 16px 0;
+    font-size: 20px;
+    font-weight: bold;
+    color: #82172C;
+}
+
+/* Heading between sections */
+.donor-page .section-heading {
+    margin: 8px 0 16px 0;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #82172C;
+}
+
+/* Smaller, left-aligned form heading on dashboard pages */
+.dash-page legend {
+    margin: 0 0 16px 0;
+    text-align: left;
+    font-size: 20px;
+}
+
+/* Data table with a header row */
+.donor-page .data-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.donor-page .data-table th,
+.donor-page .data-table td {
+    padding: 10px 8px;
+    text-align: left;
+    border-bottom: 1px solid #E8DDE0;
+}
+
+.donor-page .data-table th {
+    color: #82172C;
+    background-color: #FFF0F2;
+}
+
+/* Footer */
+.donor-page .dash-footer {
+    padding: 24px 16px;
+    text-align: center;
+    font-size: 14px;
+    color: #62636B;
+}
+
+.donor-page .dash-footer p {
+    margin: 0;
+}
+
+/* =========================================
+   MEMBER 1: DONOR
+   Donor Profile (DonorProfile.html)
+   ========================================= */
+
+/* Initial letter and heading at the top of the profile card */
+.donor-page .profile-top {
+    display: flex;
+    align-items: center;
+    margin: 0 0 16px 0;
+}
+
+.donor-page .profile-top .card-heading {
+    margin: 0 0 0 16px;
+}
+
+.donor-page .initial-badge {
+    width: 56px;
+    height: 56px;
+    line-height: 56px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #FFFFFF;
+    background-color: #B4233B;
+    border-radius: 50%;
+}
+
+/* The hidden edit form inside the profile card */
+.dash-page .edit-form {
+    margin: 24px 0 0 0;
+    padding: 24px 0 0 0;
+    border-top: 1px solid #E8DDE0;
+}
+
+/* Quick-access cards: equal width, content stacked top to bottom */
+.donor-page .action-card {
+    display: flex;
+    flex-direction: column;
+    width: 48.5%;
+}
+
+.donor-page .action-card .card-heading {
+    margin: 0 0 8px 0;
+    font-size: 20px;
+    color: #B4233B;
+}
+
+.donor-page .action-card .dash-text {
+    margin: 0 0 16px 0;
+    font-size: 16px;
+}
+
+/* Standard-size button, kept at the bottom left of the card */
+.donor-page .action-card .btn {
+    display: inline-block;
+    width: auto;
+    margin: auto 0 0 0;
+    align-self: flex-start;
+}
+
+/* =========================================
+   MEMBER 1: DONOR
+   Donor Availability (DonorAvailability.html)
+   ========================================= */
+
+/* Counter above the list of entries */
+.donor-page .entry-count {
+    margin: 0 0 12px 0;
+    font-weight: bold;
+}
+
+/* List of saved entries */
+.donor-page .entry-list {
+    margin: 0 0 16px 0;
+    padding: 0;
+    list-style: none;
+}
+
+.donor-page .entry-list li {
+    margin: 0 0 8px 0;
+    padding: 10px 12px;
+    background-color: #F9F7F8;
+    border: 1px solid #E8DDE0;
+    border-radius: 8px;
+}
+
+/* Space between the empty message and the button */
+.dash-page #EmptyEntries {
+    margin: 0 0 16px 0;
+}
+
+/* =========================================
+   MEMBER 1: DONOR
+   Donor Appointments (DonorAppointments.html)
+   ========================================= */
+
+/* Filter dropdown */
+.dash-page .filter-group {
+    max-width: 320px;
+    margin: 0 0 24px 0;
+}
+
+/* Two appointment cards per row */
+.donor-page .appointment-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.dash-page .appointment-list .card {
+    width: 48.5%;
+    margin: 0 0 24px 0;
+}
+
+/* Heading on the left, status badge on the right */
+.donor-page .appointment-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0 12px 0;
+}
+
+.donor-page .appointment-top .card-heading {
+    margin: 0;
+}
+
+/* One detail line inside an appointment card */
+.donor-page .appointment-line {
+    margin: 0 0 6px 0;
+}
+
+/* Accept and Decline buttons */
+.donor-page .appointment-actions {
+    margin: 16px 0 0 0;
+}
+
+/* Decline reason form inside a card */
+.dash-page .decline-form {
+    margin: 16px 0 0 0;
+    padding: 16px 0 0 0;
+    border-top: 1px solid #E8DDE0;
+}
