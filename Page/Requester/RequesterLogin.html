@@ -1,0 +1,124 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Requester Login | DonorConnect</title>
+
+    <link rel="stylesheet" href="../../Design/Style.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <h1>DonorConnect</h1>
+        <p>Connecting Blood Donors with Those in Need</p>
+    </header>
+
+    <nav class="topnav">
+        <a href="../../index.html">Home</a>
+        <a href="RequesterRegister.html">Register</a>
+        <a href="RequesterLogin.html">Login</a>
+    </nav>
+
+    <main class="container">
+
+        <section class="card">
+            <h2>Requester Login</h2>
+            <p>Login to access your blood request account.</p>
+
+            <form id="requesterLoginForm"
+                  onsubmit="return validateRequesterLogin()"
+                  novalidate>
+
+                <fieldset>
+                    <legend>Login Information</legend>
+
+                    <table>
+                        <tr>
+                            <td>
+                                <label>Login Method:</label>
+                            </td>
+                            <td>
+                                <label>
+                                    <input type="radio"
+                                           name="loginMethod"
+                                           value="email"
+                                           checked
+                                           onchange="changeLoginMethod()">
+                                    Email
+                                </label>
+
+                                <label>
+                                    <input type="radio"
+                                           name="loginMethod"
+                                           value="phone"
+                                           onchange="changeLoginMethod()">
+                                    Phone
+                                </label>
+
+                                <p class="error" id="loginMethodError"></p>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <label id="loginInputLabel" for="loginInput">
+                                    Email Address:
+                                </label>
+                            </td>
+                            <td>
+                                <input type="text"
+                                       id="loginInput"
+                                       name="loginInput"
+                                       placeholder="example@example.com">
+
+                                <p class="error" id="loginInputError"></p>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <label for="loginPassword">Password:</label>
+                            </td>
+                            <td>
+                                <input type="password"
+                                       id="loginPassword"
+                                       name="loginPassword"
+                                       placeholder="Enter your password">
+
+                                <p class="error" id="loginPasswordError"></p>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <button type="submit" class="btn">
+                        Login
+                    </button>
+
+                    <button type="button"
+                            id="continueButton"
+                            class="btn"
+                            hidden
+                            onclick="continueRequesterLogin()">
+                        Continue
+                    </button>
+
+                    <p class="error" id="requesterLoginMessage"></p>
+
+                </fieldset>
+
+            </form>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 DonorConnect. All rights reserved.</p>
+    </footer>
+
+    <script src="../../JS/Requester/RequesterLogin.js"></script>
+
+</body>
+</html>

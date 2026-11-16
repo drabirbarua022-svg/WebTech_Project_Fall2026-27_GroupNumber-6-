@@ -1,0 +1,301 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Requester Registration | DonorConnect</title>
+
+    <link rel="stylesheet" href="../../Design/Style.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <h1>DonorConnect</h1>
+        <p>Blood Donation Coordination and Donor Management System</p>
+    </header>
+
+    <!-- NAVIGATION -->
+    <nav class="topnav">
+        <a href="../index.html">Home</a>
+        <a href="RequesterRegister.html" class="active">Register</a>
+        <a href="RequesterLogin.html">Login</a>
+        <a href="RequesterRequest.html">Request Blood</a>
+        <a href="RequesterStatus.html">Request Status</a>
+        <a href="RequesterFeedback.html">Feedback</a>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <main class="requester-container">
+
+        <div class="card requester-register-card">
+
+            <h2>Requester Registration</h2>
+            <p class="requester-intro">
+                Register with DonorConnect to request blood when needed.
+            </p>
+
+            <!-- REGISTRATION FORM -->
+            <form id="requesterRegisterForm"
+                  onsubmit="return validateRequesterRegister()"
+                  novalidate>
+
+                <!-- PERSONAL INFORMATION -->
+                <fieldset>
+                    <legend>Personal Information</legend>
+
+                    <table>
+                        <tr>
+                            <td>
+                                <label for="requesterName">Full Name:</label>
+                            </td>
+                            <td>
+                                <input type="text"
+                                       id="requesterName"
+                                       name="requesterName"
+                                       placeholder="Enter your full name">
+
+                                <p class="error" id="requesterNameError"></p>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <label for="requesterEmail">Email:</label>
+                            </td>
+                            <td>
+                                <input type="email"
+                                       id="requesterEmail"
+                                       name="requesterEmail"
+                                       placeholder="example@example.com">
+
+                                <p class="error" id="requesterEmailError"></p>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <label for="requesterPhone">Phone Number:</label>
+                            </td>
+                            <td>
+                                <input type="tel"
+                                       id="requesterPhone"
+                                       name="requesterPhone"
+                                       placeholder="01XXXXXXXXX">
+
+                                <p class="error" id="requesterPhoneError"></p>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <label for="requesterType">Requester Type:</label>
+                            </td>
+                            <td>
+                                <select id="requesterType"
+                                        name="requesterType"
+                                        onchange="toggleOrganisationField()">
+
+                                    <option value="">Select requester type</option>
+                                    <option value="Individual">Individual</option>
+                                    <option value="Hospital staff">Hospital staff</option>
+                                    <option value="Organisation">Organisation</option>
+
+                                </select>
+
+                                <p class="error" id="requesterTypeError"></p>
+                            </td>
+                        </tr>
+
+                        <tr id="organisationRow" hidden>
+                            <td>
+                                <label for="organisationName">Organisation Name:</label>
+                            </td>
+                            <td>
+                                <input type="text"
+                                       id="organisationName"
+                                       name="organisationName"
+                                       placeholder="Enter organisation name">
+
+                                <p class="error" id="organisationNameError"></p>
+                            </td>
+                        </tr>
+
+                    </table>
+                </fieldset>
+
+
+                <!-- ADDRESS INFORMATION -->
+                <fieldset>
+                    <legend>Address Information</legend>
+
+                    <table>
+                        <tr>
+                            <td>
+                                <label for="requesterCity">City:</label>
+                            </td>
+                            <td>
+                                <select id="requesterCity" name="requesterCity">
+
+                                    <option value="">Select your city</option>
+                                    <option value="Dhaka">Dhaka</option>
+                                    <option value="Chattogram">Chattogram</option>
+                                    <option value="Sylhet">Sylhet</option>
+                                    <option value="Rajshahi">Rajshahi</option>
+                                    <option value="Khulna">Khulna</option>
+                                    <option value="Barishal">Barishal</option>
+                                    <option value="Rangpur">Rangpur</option>
+                                    <option value="Mymensingh">Mymensingh</option>
+
+                                </select>
+
+                                <p class="error" id="requesterCityError"></p>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <label for="requesterAddress">Address:</label>
+                            </td>
+                            <td>
+                                <input type="text"
+                                       id="requesterAddress"
+                                       name="requesterAddress"
+                                       placeholder="Enter your address">
+
+                                <p class="error" id="requesterAddressError"></p>
+                            </td>
+                        </tr>
+                    </table>
+                </fieldset>
+
+
+                <!-- ACCOUNT INFORMATION -->
+                <fieldset>
+                    <legend>Account Information</legend>
+
+                    <table>
+                        <tr>
+                            <td>
+                                <label for="requesterUsername">Username:</label>
+                            </td>
+                            <td>
+                                <input type="text"
+                                       id="requesterUsername"
+                                       name="requesterUsername"
+                                       placeholder="Choose a username">
+
+                                <p class="error" id="requesterUsernameError"></p>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <label for="requesterPassword">Password:</label>
+                            </td>
+                            <td>
+                                <input type="password"
+                                       id="requesterPassword"
+                                       name="requesterPassword"
+                                       placeholder="Enter password"
+                                       oninput="checkPasswordMatch()">
+
+                                <p class="error" id="requesterPasswordError"></p>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <label for="confirmPassword">Confirm Password:</label>
+                            </td>
+                            <td>
+                                <input type="password"
+                                       id="confirmPassword"
+                                       name="confirmPassword"
+                                       placeholder="Confirm password"
+                                       oninput="checkPasswordMatch()">
+
+                                <p class="error" id="confirmPasswordError"></p>
+
+                                <p id="passwordMatchMessage"></p>
+                            </td>
+                        </tr>
+                    </table>
+                </fieldset>
+
+
+                <!-- TERMS AND CONDITIONS -->
+                <fieldset>
+                    <legend>Terms and Conditions</legend>
+
+                    <table>
+                        <tr>
+                            <td colspan="2">
+                                <input type="checkbox"
+                                       id="termsCheckbox"
+                                       name="termsCheckbox">
+
+                                <label for="termsCheckbox">
+                                    I agree to the terms and conditions of DonorConnect.
+                                </label>
+
+                                <p class="error" id="termsCheckboxError"></p>
+                            </td>
+                        </tr>
+                    </table>
+                </fieldset>
+
+
+                <!-- FORM BUTTONS -->
+                <div class="requester-form-buttons">
+
+                    <button type="submit" class="btn">
+                        Register
+                    </button>
+
+                    <button type="reset" class="btn">
+                        Clear Form
+                    </button>
+
+                </div>
+
+            </form>
+
+            <!-- SUCCESS MESSAGE -->
+            <div id="requesterRegisterMessage" class="message" hidden>
+            </div>
+
+            <!-- REGISTRATION SUMMARY -->
+            <div id="requesterSummary" class="card" hidden>
+
+                <h3>Registration Summary</h3>
+
+                <div id="requesterSummaryDetails"></div>
+
+            </div>
+
+            <p class="requester-login-link">
+                Already registered?
+                <a href="RequesterLogin.html">Login here</a>
+            </p>
+
+        </div>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>&copy; 2026 DonorConnect. All rights reserved.</p>
+        <p>Connecting Blood Donors with Those in Need.</p>
+    </footer>
+
+
+    <!-- JAVASCRIPT FILES -->
+    <script src="../JS/Common.js"></script>
+    <script src="../JS/Requester/RequesterRegister.js"></script>
+
+</body>
+</html>
