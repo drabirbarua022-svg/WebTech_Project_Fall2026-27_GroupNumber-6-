@@ -16,8 +16,7 @@ form.addEventListener("submit", function(e){
   document.getElementById("passwordError").textContent = passOk ? "" : "Use at least 8 characters with uppercase, lowercase and a number.";
   if(!idOk || !passOk){ document.getElementById("loginMessage").textContent = "Please correct the highlighted fields."; return; }
   if(adminId.value.trim() === "ADM-1001" && pass === "Admin123"){
-    document.getElementById("loginMessage").textContent = "Check passed. This demo does not provide real authentication or save data.";
-    return;
+    window.location.href = "AdminDashboard.html";
   }
   attemptsLeft--;
   document.getElementById("attempts").textContent = attemptsLeft + (attemptsLeft === 1 ? " attempt" : " attempts") + " left.";

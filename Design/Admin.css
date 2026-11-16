@@ -22,3 +22,22 @@ input:focus,select:focus,textarea:focus{outline:2px solid #e9a8b4;border-color:v
 .status{display:inline-block;padding:4px 9px;border-radius:20px;font-size:.82rem;font-weight:700}.active{background:#e4f5eb;color:#17633a}.inactive,.suspended{background:#ffe5e8;color:#9b1730}
 .two-col{display:grid;grid-template-columns:1fr 1fr;gap:14px}fieldset{border:1px solid #ead5d9;border-radius:8px;margin:12px 0;padding:12px}.site-footer{text-align:center;padding:20px;color:#666;border-top:1px solid #eee}
 @media(max-width:650px){.site-header{align-items:flex-start;flex-direction:column}.filters,.two-col{grid-template-columns:1fr}.container{width:94%}.card{padding:16px}}
+
+.admin-header-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.admin-home-btn {
+    background-color: white;
+    color: #82172C;
+    padding: 8px 15px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.admin-home-btn:hover {
+    background-color: #FFF0F2;
+}

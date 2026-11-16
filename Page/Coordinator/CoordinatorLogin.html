@@ -9,7 +9,11 @@
 </head>
 <body>
   <header class="header"><h1>DonorConnect</h1><p>Blood donation coordination</p></header>
-  <nav class="topnav" aria-label="Main navigation"><a href="CoordinatorLogin.html">Login</a><a href="CoordinatorDashboard.html">Dashboard</a><a href="CoordinatorSearch.html">Find Donors</a><a href="CoordinatorReview.html">Review Requests</a><a href="CoordinatorSchedule.html">Schedule</a></nav>
+  
+<nav class="topnav" aria-label="Main navigation">
+    <a href="../../index.html">Home Page</a>
+</nav>
+
   <main><section class="card">
     <h2>Coordinator Login</h2>
     <form id="loginForm" novalidate>
@@ -22,7 +26,7 @@
       <label id="mathQuestion" for="mathAnswer">Answer the question</label>
       <input id="mathAnswer" type="number"><p class="error" id="mathAnswerError"></p>
       <button type="button" class="btn secondary" id="newQuestion">New question</button> <button type="submit">Check details</button>
-      <p id="loginMessage" class="message" aria-live="polite"></p><a id="continueLink" class="btn hidden" href="CoordinatorDashboard.html">Continue to Dashboard</a>
+      <p id="loginMessage" class="message" aria-live="polite"></p>
     </form>
   </section></main>
 </body>

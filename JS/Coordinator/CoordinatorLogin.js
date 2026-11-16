@@ -23,8 +23,14 @@ document.getElementById("loginForm").addEventListener("submit", event => {
   const validMath = Number(answer) === mathTotal;
   showText("mathAnswerError", validMath ? "" : "That answer is not correct. Try the new question.");
   const ok = validId && validPass && centre && validMath;
-  showText("loginMessage", ok ? "Check passed. This demo does not sign you in." : "Please fix the fields above.");
-  document.getElementById("continueLink").classList.toggle("hidden", !ok);
+ 
+if (ok) {
+    sessionStorage.setItem("coordinatorDemoLogin", "true");
+    window.location.href = "CoordinatorDashboard.html";
+} else {
+    showText("loginMessage", "Please fix the fields above.");
+}
+
   if (!validMath) newMathQuestion();
 });
 newMathQuestion();
