@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,13 +10,11 @@
 
 <body>
 
-    <!-- HEADER -->
     <header class="header">
         <h1>DonorConnect</h1>
         <p>Blood Donation Coordination and Donor Management System</p>
     </header>
-
-    <!-- NAVIGATION -->
+    
     <nav class="topnav">
         <a href="../../index.html">Home</a>
         <a href="RequesterRegister.html" class="active">Register</a>
@@ -27,7 +24,7 @@
         <a href="RequesterFeedback.html">Feedback</a>
     </nav>
 
-    <!-- MAIN CONTENT -->
+    
     <main class="requester-container">
 
         <div class="card requester-register-card">
@@ -37,12 +34,11 @@
                 Register with DonorConnect to request blood when needed.
             </p>
 
-            <!-- REGISTRATION FORM -->
             <form id="requesterRegisterForm"
                   onsubmit="return validateRequesterRegister()"
                   novalidate>
 
-                <!-- PERSONAL INFORMATION -->
+                
                 <fieldset>
                     <legend>Personal Information</legend>
 
@@ -127,7 +123,7 @@
                 </fieldset>
 
 
-                <!-- ADDRESS INFORMATION -->
+                
                 <fieldset>
                     <legend>Address Information</legend>
 
@@ -172,7 +168,7 @@
                 </fieldset>
 
 
-                <!-- ACCOUNT INFORMATION -->
+                
                 <fieldset>
                     <legend>Account Information</legend>
 
@@ -226,7 +222,6 @@
                 </fieldset>
 
 
-                <!-- TERMS AND CONDITIONS -->
                 <fieldset>
                     <legend>Terms and Conditions</legend>
 
@@ -248,7 +243,7 @@
                 </fieldset>
 
 
-                <!-- FORM BUTTONS -->
+               
                 <div class="requester-form-buttons">
 
                     <button type="submit" class="btn">
@@ -263,11 +258,10 @@
 
             </form>
 
-            <!-- SUCCESS MESSAGE -->
+         
             <div id="requesterRegisterMessage" class="message" hidden>
             </div>
 
-            <!-- REGISTRATION SUMMARY -->
             <div id="requesterSummary" class="card" hidden>
 
                 <h3>Registration Summary</h3>
@@ -286,16 +280,17 @@
     </main>
 
 
-    <!-- FOOTER -->
+   
     <footer class="footer">
         <p>&copy; 2026 DonorConnect. All rights reserved.</p>
         <p>Connecting Blood Donors with Those in Need.</p>
     </footer>
 
 
-    <!-- JAVASCRIPT FILES -->
-    <script src="../JS/Common.js"></script>
-    <script src="../JS/Requester/RequesterRegister.js"></script>
-
+    
+   
+<script src="../../JS/Common.js"></script>
+<script src="../../JS/Requester/RequesterRegister.js"></script>
 </body>
 </html>
+
