@@ -75,10 +75,15 @@ function validateLogin() {
     }
 
     // When every check passed, swap Login for Continue to Profile
+ 
+       
     if (isValid) {
-        loginButton.style.display = "none";
-        successBox.style.display = "block";
-    }
+    sessionStorage.setItem("donorDemoLogin", "true");
+    loginButton.style.display = "none";
+    successBox.style.display = "block";
+        }
+
+    
 
     // Always false: there is no server to send the form to
     return false;
