@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Manage Coordinators | DonorConnect</title><link rel="stylesheet" href="../Design/Style.css"><link rel="stylesheet" href="../Design/Admin.css"></head>
+<body class="admin-coordinators"><header class="site-header"><div class="brand">🩸 DonorConnect</div><span>Administrator Portal</span></header>
+<nav class="topnav"><a href="AdminDashboard.html">Dashboard</a><a href="AdminUsers.html">Users</a><a href="AdminCoordinators.html">Coordinators</a><a href="AdminReports.html">Reports</a><a href="AdminLogin.html">Logout</a></nav><main class="container">
+<h2>Coordinator Management</h2><p class="muted">Create coordinator accounts and manage their demo status.</p>
+<div class="stats-grid" id="coordinatorStats"></div>
+<section class="card"><h3>Coordinator Accounts</h3>
+<div class="table-wrap"><table><thead><tr><th>Staff ID</th><th>Name</th><th>Email</th><th>Centre</th><th>Status</th><th>Action</th></tr></thead><tbody id="coordinatorRows"></tbody></table></div>
+</section>
+<section class="card"><h3>Suspend Coordinator</h3>
+<form id="suspendForm" novalidate>
+<label for="suspendId">Coordinator ID</label><select id="suspendId"><option value="">Choose active coordinator</option></select><p class="error" id="suspendIdError"></p>
+<label for="suspendReason">Reason</label><select id="suspendReason"><option value="">Choose reason</option><option>Policy violation</option><option>Inactive account</option><option>Information verification</option><option>Other</option></select><p class="error" id="suspendReasonError"></p>
+<label for="suspendDetails">Details (at least 10 characters)</label><textarea id="suspendDetails" rows="3"></textarea><p class="error" id="suspendDetailsError"></p>
+<button class="btn" type="submit">Suspend coordinator</button><p id="suspendFeedback" class="message"></p>
+</form></section>
+<section class="card"><h3>Create Coordinator</h3>
+<form id="createCoordinatorForm" novalidate>
+<label for="coordName">Full name</label><input id="coordName"><p class="error" id="coordNameError"></p>
+<label for="staffId">Staff ID (e.g. CO-2007)</label><input id="staffId" placeholder="CO-2007"><p class="error" id="staffIdError"></p>
+<label for="coordEmail">Email</label><input id="coordEmail" type="email"><p class="error" id="coordEmailError"></p>
+<label for="coordPhone">Phone</label><input id="coordPhone" placeholder="01XXXXXXXXX"><p class="error" id="coordPhoneError"></p>
+<label for="centre">Centre</label><select id="centre"><option value="">Choose centre</option><option>Dhaka</option><option>Chattogram</option><option>Sylhet</option><option>Rajshahi</option><option>Khulna</option><option>Barishal</option><option>Rangpur</option><option>Mymensingh</option></select><p class="error" id="centreError"></p>
+<label for="startDate">Start date</label><input id="startDate" type="date"><p class="error" id="startDateError"></p>
+<button class="btn" type="submit">Create coordinator</button><p id="createFeedback" class="message"></p>
+</form></section>
+</main><footer class="site-footer">DonorConnect · Frontend demonstration only · Medical staff decide donor eligibility.</footer>
+<script src="../JS/Common.js"></script><script src="../JS/Admin/AdminCoordinators.js"></script></body></html>

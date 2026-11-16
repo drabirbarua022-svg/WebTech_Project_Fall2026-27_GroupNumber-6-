@@ -1,0 +1,224 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Request | DonorConnect</title>
+
+    <link rel="stylesheet" href="../../Design/Style.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <h1>DonorConnect</h1>
+        <p>Connecting Blood Donors with Those in Need</p>
+    </header>
+
+    <nav class="topnav">
+        <a href="../../index.html">Home</a>
+        <a href="RequesterRegister.html">Register</a>
+        <a href="RequesterLogin.html">Login</a>
+        <a href="RequesterRequest.html">Blood Request</a>
+    </nav>
+
+    <main class="container">
+
+        <section class="card">
+            <h2>Blood Request Form</h2>
+            <p>Fill in the details to submit a blood request.</p>
+
+            <div id="urgencyBanner" class="message">
+                Please select the urgency of your request.
+            </div>
+
+            <form id="bloodRequestForm"
+                  onsubmit="return validateBloodRequest()"
+                  novalidate>
+
+                <fieldset>
+                    <legend>Patient Information</legend>
+
+                    <table>
+                        <tr>
+                            <td>
+                                <label for="patientName">Patient Reference Name:</label>
+                            </td>
+                            <td>
+                                <input type="text" id="patientName">
+                                <p class="error" id="patientNameError"></p>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <label for="bloodGroup">Blood Group:</label>
+                            </td>
+                            <td>
+                                <select id="bloodGroup">
+                                    <option value="">Select Blood Group</option>
+                                    <option value="A+">A+</option>
+                                    <option value="A-">A-</option>
+                                    <option value="B+">B+</option>
+                                    <option value="B-">B-</option>
+                                    <option value="AB+">AB+</option>
+                                    <option value="AB-">AB-</option>
+                                    <option value="O+">O+</option>
+                                    <option value="O-">O-</option>
+                                </select>
+                                <p class="error" id="bloodGroupError"></p>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <label for="units">Units Required:</label>
+                            </td>
+                            <td>
+                                <input type="number" id="units" min="1" max="6">
+                                <p class="error" id="unitsError"></p>
+                            </td>
+                        </tr>
+                    </table>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Hospital Information</legend>
+
+                    <table>
+                        <tr>
+                            <td>
+                                <label for="hospitalName">Hospital Name:</label>
+                            </td>
+                            <td>
+                                <input type="text" id="hospitalName">
+                                <p class="error" id="hospitalNameError"></p>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <label for="requestCity">City:</label>
+                            </td>
+                            <td>
+                                <select id="requestCity">
+                                    <option value="">Select City</option>
+                                    <option value="Dhaka">Dhaka</option>
+                                    <option value="Chattogram">Chattogram</option>
+                                    <option value="Sylhet">Sylhet</option>
+                                    <option value="Rajshahi">Rajshahi</option>
+                                    <option value="Khulna">Khulna</option>
+                                    <option value="Barishal">Barishal</option>
+                                    <option value="Rangpur">Rangpur</option>
+                                    <option value="Mymensingh">Mymensingh</option>
+                                </select>
+                                <p class="error" id="requestCityError"></p>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <label for="dateNeeded">Date Needed:</label>
+                            </td>
+                            <td>
+                                <input type="date" id="dateNeeded">
+                                <p class="error" id="dateNeededError"></p>
+                            </td>
+                        </tr>
+                    </table>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Request Details</legend>
+
+                    <table>
+                        <tr>
+                            <td>
+                                <label for="urgency">Urgency:</label>
+                            </td>
+                            <td>
+                                <select id="urgency" onchange="changeUrgency()">
+                                    <option value="">Select Urgency</option>
+                                    <option value="Normal">Normal</option>
+                                    <option value="Urgent">Urgent</option>
+                                    <option value="Emergency">Emergency</option>
+                                </select>
+                                <p class="error" id="urgencyError"></p>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <label for="contactPhone">Contact Phone:</label>
+                            </td>
+                            <td>
+                                <input type="text" id="contactPhone">
+                                <p class="error" id="contactPhoneError"></p>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <label for="requestNotes">Additional Notes:</label>
+                            </td>
+                            <td>
+                                <textarea id="requestNotes"
+                                          maxlength="200"
+                                          oninput="updateNotesCounter()"></textarea>
+
+                                <p id="notesCounter">0/200 characters</p>
+                                <p class="error" id="requestNotesError"></p>
+                            </td>
+                        </tr>
+                    </table>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Consent</legend>
+
+                    <label>
+                        <input type="checkbox" id="requestConsent">
+                        I confirm that the information provided is correct.
+                    </label>
+
+                    <p class="error" id="requestConsentError"></p>
+                </fieldset>
+
+                <button type="submit" class="btn">Submit Blood Request</button>
+
+                <p class="message" id="requestMessage"></p>
+
+            </form>
+        </section>
+
+        <section class="card">
+            <h2>My Blood Requests</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Request ID</th>
+                        <th>Blood Group</th>
+                        <th>Units</th>
+                        <th>Hospital</th>
+                        <th>Urgency</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+
+                <tbody id="requestTableBody">
+                </tbody>
+            </table>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 DonorConnect. All rights reserved.</p>
+    </footer>
+
+    <script src="../../JS/Requester/RequesterRequest.js"></script>
+
+</body>
+</html>

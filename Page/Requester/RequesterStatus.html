@@ -1,0 +1,102 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request Status | DonorConnect</title>
+
+    <link rel="stylesheet" href="../../Design/Style.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <h1>DonorConnect</h1>
+        <p>Connecting Blood Donors with Those in Need</p>
+    </header>
+
+    <nav class="topnav">
+        <a href="../../index.html">Home</a>
+        <a href="RequesterRegister.html">Register</a>
+        <a href="RequesterLogin.html">Login</a>
+        <a href="RequesterRequest.html">Blood Request</a>
+        <a href="RequesterStatus.html">Request Status</a>
+        <a href="RequesterFeedback.html">Feedback</a>
+    </nav>
+
+    <main class="container">
+
+        <section class="card">
+            <h2>Track Blood Request</h2>
+            <p>Enter your request ID to check its current status.</p>
+
+            <form id="trackRequestForm"
+                  onsubmit="return trackRequest()"
+                  novalidate>
+
+                <fieldset>
+                    <legend>Request Tracking</legend>
+
+                    <table>
+                        <tr>
+                            <td>
+                                <label for="trackingId">Request ID:</label>
+                            </td>
+                            <td>
+                                <input type="text"
+                                       id="trackingId"
+                                       placeholder="Example: REQ-4001">
+
+                                <p class="error" id="trackingIdError"></p>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <button type="submit" class="btn">
+                        Track Request
+                    </button>
+
+                    <p class="error" id="trackingMessage"></p>
+                </fieldset>
+
+            </form>
+
+            <div id="trackingResult" hidden>
+                <h3>Request Progress</h3>
+
+                <div id="progressBar">
+                    <div id="progressFill"></div>
+                </div>
+
+                <p id="progressText"></p>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>My Blood Requests</h2>
+
+            <label for="statusFilter">Filter by Status:</label>
+
+            <select id="statusFilter" onchange="filterRequests()">
+                <option value="All">All Requests</option>
+                <option value="Pending">Pending</option>
+                <option value="Under Review">Under Review</option>
+                <option value="Donor Matched">Donor Matched</option>
+                <option value="Completed">Completed</option>
+                <option value="Cancelled">Cancelled</option>
+            </select>
+
+            <div id="requestCards"></div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 DonorConnect. All rights reserved.</p>
+    </footer>
+
+    <script src="../../JS/Requester/RequesterStatus.js"></script>
+
+</body>
+</html>

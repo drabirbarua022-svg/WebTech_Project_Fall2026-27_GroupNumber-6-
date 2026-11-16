@@ -1,0 +1,174 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Requester Feedback | DonorConnect</title>
+
+    <link rel="stylesheet" href="../../Design/Style.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <h1>DonorConnect</h1>
+        <p>Connecting Blood Donors with Those in Need</p>
+    </header>
+
+    <nav class="topnav">
+        <a href="../../index.html">Home</a>
+        <a href="RequesterRegister.html">Register</a>
+        <a href="RequesterLogin.html">Login</a>
+        <a href="RequesterRequest.html">Blood Request</a>
+        <a href="RequesterStatus.html">Request Status</a>
+        <a href="RequesterFeedback.html">Feedback</a>
+    </nav>
+
+    <main class="container">
+
+        <section class="card">
+            <h2>Give Feedback</h2>
+            <p>Share your experience with DonorConnect.</p>
+
+            <form id="feedbackForm"
+                  onsubmit="return validateFeedback()"
+                  novalidate>
+
+                <fieldset>
+                    <legend>Feedback Information</legend>
+
+                    <table>
+                        <tr>
+                            <td>
+                                <label for="completedRequest">Completed Request:</label>
+                            </td>
+                            <td>
+                                <select id="completedRequest">
+                                    <option value="">Select Request ID</option>
+                                </select>
+                                <p class="error" id="completedRequestError"></p>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <label for="rating">Rating:</label>
+                            </td>
+                            <td>
+                                <select id="rating" onchange="showRating()">
+                                    <option value="">Select Rating</option>
+                                    <option value="1">1 Star</option>
+                                    <option value="2">2 Stars</option>
+                                    <option value="3">3 Stars</option>
+                                    <option value="4">4 Stars</option>
+                                    <option value="5">5 Stars</option>
+                                </select>
+
+                                <p id="ratingWords"></p>
+                                <p class="error" id="ratingError"></p>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <label>Feedback Topic:</label>
+                            </td>
+                            <td>
+                                <label>
+                                    <input type="checkbox" name="topic" value="Website Experience">
+                                    Website Experience
+                                </label>
+
+                                <br>
+
+                                <label>
+                                    <input type="checkbox" name="topic" value="Communication">
+                                    Communication
+                                </label>
+
+                                <br>
+
+                                <label>
+                                    <input type="checkbox" name="topic" value="Response Time">
+                                    Response Time
+                                </label>
+
+                                <br>
+
+                                <label>
+                                    <input type="checkbox" name="topic" value="Overall Service">
+                                    Overall Service
+                                </label>
+
+                                <p class="error" id="topicError"></p>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <label for="feedbackComment">Comments:</label>
+                            </td>
+                            <td>
+                                <textarea id="feedbackComment"
+                                          maxlength="300"
+                                          oninput="updateFeedbackCounter()"></textarea>
+
+                                <p id="feedbackCounter">0/300 characters</p>
+                                <p class="error" id="feedbackCommentError"></p>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <label>Would you recommend DonorConnect?</label>
+                            </td>
+                            <td>
+                                <label>
+                                    <input type="radio"
+                                           name="recommend"
+                                           value="Yes">
+                                    Yes
+                                </label>
+
+                                <label>
+                                    <input type="radio"
+                                           name="recommend"
+                                           value="No">
+                                    No
+                                </label>
+
+                                <p class="error" id="recommendError"></p>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <button type="submit" class="btn">
+                        Submit Feedback
+                    </button>
+
+                    <p class="message" id="feedbackMessage"></p>
+
+                </fieldset>
+
+            </form>
+        </section>
+
+        <section class="card">
+            <h2>Submitted Feedback</h2>
+
+            <h3>Average Rating: <span id="averageRating">0</span>/5</h3>
+
+            <div id="feedbackList"></div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 DonorConnect. All rights reserved.</p>
+    </footer>
+
+    <script src="../../JS/Requester/RequesterFeedback.js"></script>
+
+</body>
+</html>
