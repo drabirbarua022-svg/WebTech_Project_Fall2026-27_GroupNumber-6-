@@ -1,11 +1,3 @@
-
-// ==========================================
-// MEMBER 2: BLOOD REQUESTER
-// File: RequesterRegister.js
-// ==========================================
-
-
-// Show or hide the Organisation Name field
 function toggleOrganisationField() {
 
     const requesterType = document.getElementById("requesterType").value;
@@ -27,7 +19,6 @@ function toggleOrganisationField() {
 }
 
 
-// Check whether passwords match while typing
 function checkPasswordMatch() {
 
     const password = document.getElementById("requesterPassword").value;
@@ -53,7 +44,6 @@ function checkPasswordMatch() {
 }
 
 
-// Clear all error messages
 function clearRequesterErrors() {
 
     const errorIds = [
@@ -79,14 +69,12 @@ function clearRequesterErrors() {
 }
 
 
-// Validate the requester registration form
 function validateRequesterRegister() {
 
     clearRequesterErrors();
 
     let isValid = true;
 
-    // Get form values
     const name = document.getElementById("requesterName").value.trim();
 
     const email = document.getElementById("requesterEmail").value.trim();
@@ -110,7 +98,6 @@ function validateRequesterRegister() {
     const terms = document.getElementById("termsCheckbox").checked;
 
 
-    // Name validation
     if (name === "") {
 
         document.getElementById("requesterNameError").textContent =
@@ -121,7 +108,6 @@ function validateRequesterRegister() {
     }
 
 
-    // Email validation
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     if (email === "") {
@@ -141,7 +127,6 @@ function validateRequesterRegister() {
     }
 
 
-    // Phone validation
     const phonePattern = /^[0-9]{11}$/;
 
     if (phone === "") {
@@ -161,7 +146,6 @@ function validateRequesterRegister() {
     }
 
 
-    // Requester type validation
     if (requesterType === "") {
 
         document.getElementById("requesterTypeError").textContent =
@@ -171,8 +155,6 @@ function validateRequesterRegister() {
 
     }
 
-
-    // Organisation name validation
     if (requesterType === "Hospital staff" ||
         requesterType === "Organisation") {
 
@@ -188,7 +170,6 @@ function validateRequesterRegister() {
     }
 
 
-    // City validation
     if (city === "") {
 
         document.getElementById("requesterCityError").textContent =
@@ -199,7 +180,6 @@ function validateRequesterRegister() {
     }
 
 
-    // Address validation
     if (address === "") {
 
         document.getElementById("requesterAddressError").textContent =
@@ -210,7 +190,6 @@ function validateRequesterRegister() {
     }
 
 
-    // Username validation
     if (username === "") {
 
         document.getElementById("requesterUsernameError").textContent =
@@ -221,7 +200,6 @@ function validateRequesterRegister() {
     }
 
 
-    // Password validation
     if (password === "") {
 
         document.getElementById("requesterPasswordError").textContent =
@@ -239,7 +217,6 @@ function validateRequesterRegister() {
     }
 
 
-    // Confirm password validation
     if (confirmPassword === "") {
 
         document.getElementById("confirmPasswordError").textContent =
@@ -257,7 +234,6 @@ function validateRequesterRegister() {
     }
 
 
-    // Terms and conditions validation
     if (!terms) {
 
         document.getElementById("termsCheckboxError").textContent =
@@ -268,7 +244,6 @@ function validateRequesterRegister() {
     }
 
 
-    // If any validation fails, stop submission
     if (!isValid) {
 
         return false;
@@ -276,7 +251,7 @@ function validateRequesterRegister() {
     }
 
 
-    // Registration successful (frontend demo only)
+   
     showRequesterSummary(
         name,
         email,
@@ -293,7 +268,7 @@ function validateRequesterRegister() {
 }
 
 
-// Display registration summary
+
 function showRequesterSummary(
     name,
     email,
@@ -314,22 +289,21 @@ function showRequesterSummary(
     const summaryDetails = document.getElementById("requesterSummaryDetails");
 
 
-    // Hide the registration form
+    
     form.hidden = true;
 
 
-    // Show demo success message
     successMessage.textContent =
         "Check passed. This demo does not save data yet.";
 
     successMessage.hidden = false;
 
 
-    // Clear previous summary
+    
     summaryDetails.textContent = "";
 
 
-    // Create summary information
+    
     const details = [
         ["Full Name", name],
         ["Email", email],
@@ -341,7 +315,7 @@ function showRequesterSummary(
     ];
 
 
-    // Show organisation name when applicable
+   
     if (requesterType === "Hospital staff" ||
         requesterType === "Organisation") {
 
@@ -350,7 +324,7 @@ function showRequesterSummary(
     }
 
 
-    // Add details to the summary card
+    
     for (let i = 0; i < details.length; i++) {
 
         const paragraph = document.createElement("p");
@@ -370,13 +344,11 @@ function showRequesterSummary(
     }
 
 
-    // Display summary card
     summary.hidden = false;
 
 }
 
 
-// Reset dynamic messages when the form is cleared
 document.getElementById("requesterRegisterForm").addEventListener("reset", function () {
 
     clearRequesterErrors();

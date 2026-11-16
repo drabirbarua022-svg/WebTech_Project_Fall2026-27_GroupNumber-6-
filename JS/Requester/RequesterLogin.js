@@ -1,4 +1,3 @@
-
 function changeLoginMethod() {
     const selectedMethod = document.querySelector(
         'input[name="loginMethod"]:checked'

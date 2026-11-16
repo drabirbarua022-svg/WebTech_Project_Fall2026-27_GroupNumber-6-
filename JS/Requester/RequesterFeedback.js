@@ -1,4 +1,3 @@
-
 const completedRequests = [
     "REQ-4004",
     "REQ-4006",
